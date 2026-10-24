@@ -9,7 +9,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "EDU-Craft | Institute — Premium Coaching in Kolkata",
-  description: "EDU-Craft Institute, Garden Reach, Kolkata provides structured Foundation, Higher Secondary, IIT-JEE, NEET and Test Series programmes with conceptual learning, practice and personalized academic guidance.",
+  description:
+    "EDU-Craft Institute, Garden Reach, Kolkata provides structured Foundation, Higher Secondary, IIT-JEE, NEET and Test Series programmes with conceptual learning, practice and personalized academic guidance.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "64x64" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
