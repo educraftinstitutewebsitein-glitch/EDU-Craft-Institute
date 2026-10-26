@@ -72,6 +72,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/events" className="hover:text-educraft-gold transition-colors">
+                  Events &amp; Competitions
+                </Link>
+              </li>
+              <li>
+                <Link href="/#testimonials" className="hover:text-educraft-gold transition-colors">
+                  Student Testimonials
+                </Link>
+              </li>
+              <li>
                 <Link href="/admission" className="hover:text-educraft-gold transition-colors">
                   Admissions &amp; Enquiry
                 </Link>

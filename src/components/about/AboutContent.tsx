@@ -23,6 +23,10 @@ import {
   Building,
   School,
   Clock,
+  Mail,
+  Calendar,
+  Quote,
+  Medal,
 } from "lucide-react";
 
 // Animation Variants
@@ -547,129 +551,429 @@ export default function AboutContent() {
               Leadership &amp; Vision
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-educraft-primary tracking-tight mt-2 mb-4">
-              The People Behind the Purpose
+              About Our Founders
             </h2>
             <p className="text-base sm:text-lg text-foreground/75 leading-relaxed">
-              EDU-Craft | Institute was founded by <strong className="text-educraft-primary">Umair Khan</strong> and{" "}
-              <strong className="text-educraft-primary">MD Shaharyar Alam</strong>. They lead the institute&apos;s educational vision and academic approach.
+              Meet the visionary educators behind <strong className="text-educraft-primary">EDU-Craft | Institute</strong> — driving academic excellence, student empowerment, and deep conceptual learning in Kolkata.
             </p>
             <div className="w-20 h-1 bg-educraft-gold/50 mx-auto mt-6 rounded-full" />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-            {founders.map((founder) => (
-              <motion.div
-                key={founder.name}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="rounded-3xl bg-white border border-educraft-secondary/30 p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-start justify-between gap-4 mb-6">
-                    <div className="flex items-center gap-4">
-                      {/* Branded founder avatar badge */}
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-educraft-primary text-white flex items-center justify-center font-bold text-2xl shadow-md border-2 border-educraft-gold/40 overflow-hidden relative">
-                        {founder.imagePath ? (
-                          <Image
-                            src={founder.imagePath}
-                            alt={founder.name}
-                            fill
-                            className="object-cover object-top"
-                          />
-                        ) : (
-                          founder.initials
-                        )}
-                      </div>
-                      <div>
-                        <span className="text-[11px] font-bold text-educraft-gold uppercase tracking-wider">
-                          Founder {founder.number}
-                        </span>
-                        <h3 className="text-2xl font-bold text-educraft-primary">
-                          {founder.name}
-                        </h3>
-                        <p className="text-xs text-foreground/60 font-medium">
-                          {founder.role}
-                        </p>
-                      </div>
+          <div className="space-y-12 max-w-5xl mx-auto">
+            {/* FOUNDER 1: MD SHAHARYAR ALAM */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="rounded-3xl bg-white border border-educraft-secondary/30 p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex flex-col lg:flex-row gap-8 items-start">
+                <div className="flex flex-col items-center text-center lg:w-64 shrink-0 mx-auto lg:mx-0">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl bg-educraft-primary text-white flex items-center justify-center font-bold text-3xl shadow-md border-2 border-educraft-gold/40 overflow-hidden relative mb-4">
+                    <Image
+                      src="/images/faculty/md-shaharyar-alam.jpg"
+                      alt="MD Shaharyar Alam"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <span className="text-[11px] font-bold text-educraft-gold uppercase tracking-wider">
+                    Founder / CEO
+                  </span>
+                  <h3 className="text-2xl font-bold text-educraft-primary mt-1">
+                    MD Shaharyar Alam
+                  </h3>
+                  <p className="text-xs text-foreground/60 font-medium mt-0.5">
+                    EDUCATOR • 7+ Years Experience
+                  </p>
+                  <a
+                    href="mailto:mdshaharyaralam24@gmail.com"
+                    className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-educraft-primary/5 hover:bg-educraft-primary/10 text-educraft-primary text-xs font-semibold transition-colors border border-educraft-primary/15"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-educraft-gold" />
+                    mdshaharyaralam24@gmail.com
+                  </a>
+                </div>
+
+                <div className="flex-1 space-y-6">
+                  {/* Personal & Academic Profile */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-educraft-light/40 border border-educraft-secondary/30 text-xs sm:text-sm">
+                    <div>
+                      <span className="text-[10px] uppercase font-bold text-educraft-gold tracking-wider block">
+                        Personal Details
+                      </span>
+                      <p className="font-semibold text-educraft-primary mt-0.5">
+                        D.O.B: 1st September 2003
+                      </p>
+                      <p className="text-foreground/70">Place of Birth: Kolkata, West Bengal, India</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase font-bold text-educraft-gold tracking-wider block">
+                        Higher Education
+                      </span>
+                      <p className="font-semibold text-educraft-primary mt-0.5">
+                        B.Sc. Zoology Honours (UG)
+                      </p>
+                      <p className="text-foreground/70">Asutosh College, Kolkata</p>
                     </div>
                   </div>
 
-                  {/* Credentials */}
-                  <div className="grid grid-cols-2 gap-3 mb-6 p-4 rounded-xl bg-educraft-light/40 border border-educraft-secondary/30">
-                    <div>
-                      <div className="text-[10px] text-educraft-gold font-bold uppercase tracking-wider">
-                        Qualification
-                      </div>
-                      <div className="text-sm font-semibold text-educraft-primary">
-                        {founder.qualification}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-[10px] text-educraft-gold font-bold uppercase tracking-wider">
-                        Experience
-                      </div>
-                      <div className="text-sm font-semibold text-educraft-primary">
-                        {founder.experience}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Academic Expertise */}
+                  {/* Biography & Educational Journey */}
                   <div>
-                    <h4 className="text-xs font-bold text-educraft-primary uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <h4 className="text-xs font-bold text-educraft-primary uppercase tracking-wider mb-2.5 flex items-center gap-2">
                       <GraduationCap className="w-4 h-4 text-educraft-gold" />
-                      Academic Expertise
+                      Biography &amp; Educational Background
                     </h4>
-                    <ul className="space-y-2.5 text-sm text-foreground/80">
-                      {founder.expertise.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-educraft-gold shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
+                    <div className="grid sm:grid-cols-2 gap-2 text-xs sm:text-sm text-foreground/80">
+                      <div className="p-3 rounded-xl bg-gray-50 border border-gray-100">
+                        <span className="font-semibold text-educraft-primary block">Pre-Primary &amp; Primary</span>
+                        Garden Reach Tiny Tots Nursery School
+                      </div>
+                      <div className="p-3 rounded-xl bg-gray-50 border border-gray-100">
+                        <span className="font-semibold text-educraft-primary block">Secondary Education (10th)</span>
+                        The Calcutta Anglo Gujarati School (1st Division)
+                      </div>
+                      <div className="p-3 rounded-xl bg-gray-50 border border-gray-100">
+                        <span className="font-semibold text-educraft-primary block">Higher Secondary (12th Science)</span>
+                        G.R.K.C. Mills High H.S. School (1st Division)
+                      </div>
+                      <div className="p-3 rounded-xl bg-gray-50 border border-gray-100">
+                        <span className="font-semibold text-educraft-primary block">Undergraduate Degree</span>
+                        B.Sc. Zoology Honours from Asutosh College
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Relevant Experience & Mentorship */}
+                  <div>
+                    <h4 className="text-xs font-bold text-educraft-primary uppercase tracking-wider mb-2.5 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-educraft-gold" />
+                      Relevant Mentoring Experience &amp; Impact
+                    </h4>
+                    <ul className="space-y-2 text-xs sm:text-sm text-foreground/80">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-educraft-gold shrink-0 mt-0.5" />
+                        <span><strong>Mentored 50+ students</strong> to top-tier academic success, with Foundation course students achieving scores ranging from <strong>85% to 97%</strong>.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-educraft-gold shrink-0 mt-0.5" />
+                        <span>Trained high-achieving students for competition-based Math and Science (e.g. Master Mathematics Challenge, Science Fusion), consistently producing <strong>1st and 2nd rank winners</strong>.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-educraft-gold shrink-0 mt-0.5" />
+                        <span>7+ Years of dedicated experience teaching and mentoring students across multiple subjects and academic levels.</span>
+                      </li>
                     </ul>
                   </div>
+
+                  {/* Core Philosophy / Pillars */}
+                  <div>
+                    <h4 className="text-xs font-bold text-educraft-primary uppercase tracking-wider mb-2.5 flex items-center gap-2">
+                      <Target className="w-4 h-4 text-educraft-gold" />
+                      Leadership Commitments
+                    </h4>
+                    <div className="space-y-2 text-xs sm:text-sm">
+                      <div className="p-3 rounded-xl bg-[#faf9f5] border-l-4 border-educraft-gold text-foreground/80">
+                        <strong className="text-educraft-primary">Championing:</strong> &ldquo;Championing holistic growth at EDU-Craft | Institute, for a better Tomorrow.&rdquo;
+                      </div>
+                      <div className="p-3 rounded-xl bg-[#faf9f5] border-l-4 border-educraft-primary text-foreground/80">
+                        <strong className="text-educraft-primary">Advancing:</strong> &ldquo;Advancing EDU-Craft&apos;s mission to create Future Leaders.&rdquo;
+                      </div>
+                      <div className="p-3 rounded-xl bg-[#faf9f5] border-l-4 border-emerald-600 text-foreground/80">
+                        <strong className="text-educraft-primary">Nurturing:</strong> &ldquo;Nurturing a trusted learning environment where every student receives the guidance needed to think critically, excel academically, and achieve long-term growth.&rdquo;
+                      </div>
+                      <div className="p-3 rounded-xl bg-[#faf9f5] border-l-4 border-amber-500 text-foreground/80">
+                        <strong className="text-educraft-primary">Transforming:</strong> &ldquo;Transforming EDU-Craft into a community where we are Producing Diamonds Through Stones.&rdquo;
+                      </div>
+                      <div className="p-3 rounded-xl bg-[#faf9f5] border-l-4 border-blue-600 text-foreground/80">
+                        <strong className="text-educraft-primary">Establishing:</strong> &ldquo;Establishing EDU-Craft | Institute as a trusted space where students are empowered to move beyond rote learning to deeply understand, question, and master core concepts.&rdquo;
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Achievements & National Recognitions */}
+                  <div>
+                    <h4 className="text-xs font-bold text-educraft-primary uppercase tracking-wider mb-2.5 flex items-center gap-2">
+                      <Medal className="w-4 h-4 text-educraft-gold" />
+                      Key Achievements &amp; Recognitions
+                    </h4>
+                    <div className="grid sm:grid-cols-2 gap-2 text-xs text-foreground/85">
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-center gap-2">
+                        <span>🥇</span>
+                        <span><strong>National Level Gold Medalist</strong> (Health &amp; Hygiene) - 2024</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-center gap-2">
+                        <span>🥇</span>
+                        <span><strong>Directorate &amp; Group Level Gold Medalist</strong> (Health &amp; Hygiene) - 2024</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-center gap-2">
+                        <span>🥇</span>
+                        <span><strong>Unit Level Gold Medalist</strong> &amp; Battalion Silver 🥈 (2024)</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-center gap-2">
+                        <span>🚀</span>
+                        <span><strong>Certified in Space Science</strong> — ISRO (Indian Space Research Organisation, 1st Batch 2023)</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-center gap-2">
+                        <span>🎖️</span>
+                        <span><strong>AITSC (Delhi) 2024</strong> &amp; <strong>IMA Candidate</strong> (Merit List, 2024)</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-center gap-2">
+                        <span>🏆</span>
+                        <span><strong>1st Position</strong> in Consumer Affairs (District Level 2022 &amp; State Level)</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 sm:col-span-2 flex items-center gap-2">
+                        <span>🎖️</span>
+                        <span><strong>NCC &apos;C&apos; Certificate</strong> (2026)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* FOUNDER 2: UMAIR KHAN */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="rounded-3xl bg-white border border-educraft-secondary/30 p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex flex-col lg:flex-row gap-8 items-start">
+                <div className="flex flex-col items-center text-center lg:w-64 shrink-0 mx-auto lg:mx-0">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl bg-educraft-primary text-white flex items-center justify-center font-bold text-3xl shadow-md border-2 border-educraft-gold/40 overflow-hidden relative mb-4">
+                    <Image
+                      src="/images/faculty/umair-khan.jpg"
+                      alt="Umair Khan"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <span className="text-[11px] font-bold text-educraft-gold uppercase tracking-wider">
+                    Co-Founder / Co-CEO
+                  </span>
+                  <h3 className="text-2xl font-bold text-educraft-primary mt-1">
+                    Umair Khan
+                  </h3>
+                  <p className="text-xs text-foreground/60 font-medium mt-0.5">
+                    ACADEMIC LEAD • 5+ Years Experience
+                  </p>
+                  <a
+                    href="mailto:umairkhan280406@gmail.com"
+                    className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-educraft-primary/5 hover:bg-educraft-primary/10 text-educraft-primary text-xs font-semibold transition-colors border border-educraft-primary/15"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-educraft-gold" />
+                    umairkhan280406@gmail.com
+                  </a>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between text-xs text-foreground/60">
-                  <span>Educational Leadership</span>
-                  <span className="font-semibold text-educraft-primary">EDU-Craft Co-Founder</span>
+                <div className="flex-1 space-y-6">
+                  {/* Personal & Academic Details */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-educraft-light/40 border border-educraft-secondary/30 text-xs sm:text-sm">
+                    <div>
+                      <span className="text-[10px] uppercase font-bold text-educraft-gold tracking-wider block">
+                        Personal Details
+                      </span>
+                      <p className="font-semibold text-educraft-primary mt-0.5">
+                        D.O.B: 28th April 2006
+                      </p>
+                      <p className="text-foreground/70">Place of Birth: Kolkata, West Bengal, India</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase font-bold text-educraft-gold tracking-wider block">
+                        Higher Education
+                      </span>
+                      <p className="font-semibold text-educraft-primary mt-0.5">
+                        B.Sc. Honours in Physics (Pursuing)
+                      </p>
+                      <p className="text-foreground/70">Class 10th &amp; 12th: G.R.K.C. Mills High (H.S) School</p>
+                    </div>
+                  </div>
+
+                  {/* Biography */}
+                  <div>
+                    <h4 className="text-xs font-bold text-educraft-primary uppercase tracking-wider mb-2 flex items-center gap-2">
+                      <GraduationCap className="w-4 h-4 text-educraft-gold" />
+                      About Umair Khan
+                    </h4>
+                    <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed mb-3">
+                      Umair Khan is the Co-Founder of EDU-Craft | Institute, an academic initiative built with the vision of making quality education accessible, engaging, and meaningful for students. Alongside his responsibilities as a founder, he is pursuing a B.Sc. Honours in Physics and brings years of proven teaching and academic mentoring experience.
+                    </p>
+                    <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed">
+                      With a deep passion for science and education, Umair focuses on developing conceptual understanding rather than encouraging rote learning. At EDU-Craft | Institute, his aim is to create an environment where students receive quality subject teaching, individual attention, proper academic guidance, and practical solutions to their educational challenges.
+                    </p>
+                  </div>
+
+                  {/* Vision & Mission */}
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="p-4 rounded-xl bg-gray-50 border border-gray-100">
+                      <span className="text-[10px] uppercase font-bold text-educraft-primary tracking-wider flex items-center gap-1.5 mb-1.5">
+                        <Target className="w-3.5 h-3.5 text-educraft-gold" />
+                        Founder&apos;s Vision
+                      </span>
+                      <p className="text-xs text-foreground/75 leading-relaxed">
+                        To build an educational institution where quality teaching, strong fundamentals, personal guidance, and student development go hand in hand, helping students become confident, capable, and responsible individuals.
+                      </p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-gray-50 border border-gray-100">
+                      <span className="text-[10px] uppercase font-bold text-educraft-primary tracking-wider flex items-center gap-1.5 mb-1.5">
+                        <Sparkles className="w-3.5 h-3.5 text-educraft-gold" />
+                        Founder&apos;s Mission
+                      </span>
+                      <p className="text-xs text-foreground/75 leading-relaxed">
+                        To provide students with accessible and quality education through dedicated teachers, conceptual learning, continuous academic support, and a student-centered approach—creating an environment where learning extends beyond textbooks and examinations.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Key Contributions & Achievements */}
+                  <div>
+                    <h4 className="text-xs font-bold text-educraft-primary uppercase tracking-wider mb-2.5 flex items-center gap-2">
+                      <Medal className="w-4 h-4 text-educraft-gold" />
+                      Key Contributions &amp; Honors
+                    </h4>
+                    <div className="grid sm:grid-cols-2 gap-2 text-xs text-foreground/85">
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-educraft-gold shrink-0 mt-0.5" />
+                        <span>Academic planning and curriculum development</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-educraft-gold shrink-0 mt-0.5" />
+                        <span>5+ years of teaching &amp; mentoring experience across multiple academic levels</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-educraft-gold shrink-0 mt-0.5" />
+                        <span>Taught for 3+ years in another renowned coaching centre as a Science teacher</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-start gap-2">
+                        <span>🏆</span>
+                        <span>Won District Level Consumer Affairs competition (Class 12, 2022)</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-start gap-2">
+                        <span>🏛️</span>
+                        <span>3rd Rank in The Youth Parliamentary Competition (2018)</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-start gap-2">
+                        <span>🌟</span>
+                        <span>Participated in State Level Consumer Affairs competition (2022)</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
           </div>
 
-          {/* Founders Message Button */}
+          {/* Founders Message Jump Button */}
           <div className="text-center mt-12">
             <Link
               href="/about#founders-desk"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-educraft-primary text-white font-medium hover:bg-educraft-primary/90 transition-all hover:-translate-y-0.5 shadow-lg shadow-educraft-primary/20 text-sm tracking-wide"
             >
-              READ THE FOUNDERS&apos; MESSAGE
+              READ FROM THE FOUNDERS&apos; DESK
               <ArrowRight className="w-4 h-4 text-educraft-gold" />
             </Link>
           </div>
 
-          {/* Dedicated Founders' Desk Anchor & Statement */}
+          {/* =========================================================================
+              FROM THE FOUNDER'S DESK (COMPLETE OFFICIAL LETTER)
+             ========================================================================= */}
           <div
             id="founders-desk"
-            className="mt-16 max-w-4xl mx-auto p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-educraft-primary to-[#1c304d] text-white shadow-xl relative overflow-hidden"
+            className="mt-16 max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-educraft-primary via-[#1c304d] to-[#122238] text-white shadow-2xl relative overflow-hidden border border-white/10"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-educraft-gold/10 rounded-full blur-2xl pointer-events-none" />
-            <span className="text-xs font-bold text-educraft-gold uppercase tracking-widest block mb-2">
-              From the Founders&apos; Desk
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              Building Conceptual Foundations That Last
-            </h3>
-            <p className="text-educraft-supporting-2/95 text-base sm:text-lg leading-relaxed mb-6 font-serif italic">
-              &ldquo;When we founded EDU-Craft | Institute, our clear intent was to create a learning space where students do not merely memorize formulas for short-term scores, but genuinely comprehend the core logic of their subjects. True academic self-confidence begins with clarity. When students know why a concept works, they approach examinations and future learning challenges without fear.&rdquo;
-            </p>
-            <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-educraft-secondary">
-              <span>Umair Khan &amp; MD Shaharyar Alam</span>
-              <span className="font-semibold text-educraft-gold">EDU-Craft Founders • Est. 2021</span>
+            <div className="absolute top-0 right-0 w-80 h-80 bg-educraft-gold/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-educraft-secondary/10 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="relative z-10">
+              <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+                <span className="text-xs font-bold text-educraft-gold uppercase tracking-widest flex items-center gap-2">
+                  <Quote className="w-4 h-4" />
+                  Official Communication
+                </span>
+                <span className="text-[11px] text-educraft-secondary uppercase tracking-wider font-semibold">
+                  Kolkata (Garden Reach)
+                </span>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 tracking-tight text-white">
+                FROM THE FOUNDER&apos;S DESK
+              </h3>
+
+              <div className="space-y-5 text-educraft-supporting-2/95 text-sm sm:text-base leading-relaxed font-normal">
+                <p className="font-semibold text-white text-base sm:text-lg">
+                  Dear Parents,
+                </p>
+
+                <p className="italic font-serif text-educraft-gold text-base sm:text-lg">
+                  &ldquo;Success comes to those who work hard and stays with those, who don&apos;t rest on the laurels of the past.&rdquo;
+                </p>
+
+                <p>
+                  We would like to congratulate all our dear students for crossing another milestone of the new academic session. It&apos;s been a great year! Together we&apos;ve learned much and shared experiences that will remain long with us in the years to come. As we successfully complete another year of dedicated service in the field of education, we extend our heartiest welcome and prayers for a blessed academic year ahead.
+                </p>
+
+                <p>
+                  A special welcome to all the new students who have joined <strong>EDU-Craft | Institute, Kolkata (Garden Reach)</strong> this year. We look forward to forging strong and lasting relationships with you as you strive to attain proficiency through holistic education at ECI. To all our existing students, we welcome you back to a new chapter in your lives, with blessings that you may continue to grow in knowledge, love &amp; affection.
+                </p>
+
+                <p className="p-4 rounded-2xl bg-white/5 border border-white/10 italic text-educraft-gold font-serif">
+                  At ECI, Kolkata (Garden Reach), we believe that <strong className="text-white">&ldquo;The mind is not a vessel to be filled, but a fire to be kindled.&rdquo;</strong> – Plutarch
+                </p>
+
+                <p>
+                  While academic excellence is our major thrust, the Institute is also devoted to preparing students for life, grooming them to face the challenges of tomorrow, and encouraging them to be socially relevant. We constantly endeavour to always live up to this ideology and inculcate this into everything we do, with the aim that we will be able to ensure that children grow to their full potential, while constantly being groomed to pass out as men and women competent to bear responsibility in all walks of life.
+                </p>
+
+                <p>
+                  Armoured with poise, perseverance, and systemized working, and adorned with a sound nurturing in values, virtues, patriotism, conduct, manner of dressing, and credibility (the attributes of a true ECI student), any individual would stand out in a crowd or achieve the higher goals in life.
+                </p>
+
+                <p>
+                  The parents are the most strengthening power in moulding the future of children. Their consistent support empowers us to do more and more. We pay our gratitude to them for their faith in us. We will continue with the spirit of inculcating ethics &amp; ethos in young minds with aplomb and dedication.
+                </p>
+
+                <p>
+                  The almanac is a reference regarding Institute policies and procedures. Please take the time to familiarise yourself with the content of the almanac. We encourage all parents and guardians to take an active role in the education of their child.
+                </p>
+
+                <p>
+                  As a team, we can work together to make this year a brighter one providing opportunities and quality education for our students.
+                </p>
+
+                <div className="p-5 rounded-2xl bg-white/5 border border-white/10 my-4 text-center">
+                  <p className="italic font-serif text-educraft-gold text-sm sm:text-base leading-relaxed">
+                    &ldquo;When things go wrong, as they sometimes will,<br />
+                    When the road you&apos;re trudging seems all uphill,<br />
+                    When care is pressing you down a bit –<br />
+                    Rest if you must, but don&apos;t you quit.&rdquo;
+                  </p>
+                  <p className="text-xs text-educraft-secondary mt-3 font-semibold tracking-wide">
+                    &ldquo;Let noble thoughts come to us from every side&rdquo;
+                  </p>
+                </div>
+
+                <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    <div className="font-bold text-white text-base sm:text-lg">
+                      UMAIR KHAN &amp; MD SHAHARYAR ALAM
+                    </div>
+                    <div className="text-xs text-educraft-gold font-semibold uppercase tracking-wider">
+                      (FOUNDERS)
+                    </div>
+                    <div className="text-xs text-educraft-secondary">
+                      EDU-Craft | Institute • Kolkata (Garden Reach)
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[11px] px-3 py-1.5 rounded-full bg-white/10 text-white font-medium border border-white/15">
+                      Empowering Future Leaders
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

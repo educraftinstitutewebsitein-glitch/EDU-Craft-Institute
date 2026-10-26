@@ -6,6 +6,8 @@ import CoursesContent from "@/components/courses/CoursesContent";
 import FacultyContent from "@/components/faculty/FacultyContent";
 import TestSeriesContent from "@/components/test-series/TestSeriesContent";
 import ResultsContent from "@/components/results/ResultsContent";
+import EventsContent from "@/components/events/EventsContent";
+import TestimonialsContent from "@/components/testimonials/TestimonialsContent";
 import AdmissionContent from "@/components/admission/AdmissionContent";
 import ContactContent from "@/components/contact/ContactContent";
 
@@ -36,6 +38,14 @@ export default function Home() {
 
         <section id="results" className="scroll-mt-20">
           <ResultsContent />
+        </section>
+
+        <section id="events" className="scroll-mt-20">
+          <EventsContent />
+        </section>
+
+        <section id="testimonials" className="scroll-mt-20">
+          <TestimonialsContent />
         </section>
 
         <section id="admission" className="scroll-mt-20">
