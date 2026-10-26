@@ -98,6 +98,11 @@ export const EVENTS_DATA: EventItem[] = [
         tag: "Group A Ceremony",
       },
       {
+        src: "/images/events/mmc-2026-winners-group-b.jpg",
+        caption: "Official Group B (Classes 6 to 8) winners — Md Ashraf Jamal Qureshi (1st), Shadman Akhtar (2nd) & Asifa Kaushar (3rd) felicitated on stage.",
+        tag: "Group B Ceremony",
+      },
+      {
         src: "/images/events/mmc-2026-winners-group-c.jpg",
         caption: "Official Group C (Classes 9 to 10) award felicitation acknowledging exceptional senior talent.",
         tag: "Group C Ceremony",
@@ -117,6 +122,16 @@ export const EVENTS_DATA: EventItem[] = [
           { position: "1st", name: "Ayesha Khan", badgeColor: "bg-amber-400 text-amber-950" },
           { position: "2nd", name: "Shayan Qamar", badgeColor: "bg-slate-300 text-slate-900" },
           { position: "3rd", name: "Aqdass Muneer", badgeColor: "bg-amber-700 text-amber-50" },
+        ],
+      },
+      {
+        group: "Group B",
+        classes: "Class 6 to 8",
+        posterImage: "/images/events/mmc-2026-winners-group-b.jpg",
+        winners: [
+          { position: "1st", name: "Md Ashraf Jamal Qureshi", badgeColor: "bg-amber-400 text-amber-950" },
+          { position: "2nd", name: "Shadman Akhtar", badgeColor: "bg-slate-300 text-slate-900" },
+          { position: "3rd", name: "Asifa Kaushar", badgeColor: "bg-amber-700 text-amber-50" },
         ],
       },
       {
